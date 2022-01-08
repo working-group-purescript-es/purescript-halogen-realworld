@@ -9,10 +9,10 @@
     "build": "spago build",
     "test": "spago test",
     "esbuild": "esbuild --external:url --external:xhr2 --outfile=dist/main.js",
-    "bundle:build": "spago build --purs-args '--codegen corefn'",
+    "bundle:build": "spago build",
     "bundle:dce": "zephyr -f Main.main",
     "bundle:esbuild": "npm run esbuild -- --bundle index.js --minify",
-    "bundle": "npm run bundle:build && npm run bundle:dce && npm run bundle:esbuild",
+    "bundle": "npm run bundle:build && npm run bundle:esbuild",
     "serve-dev": "npm run esbuild -- --bundle index-dev.js --servedir=dist",
     "serve-prod": "http-server dist"
   },
